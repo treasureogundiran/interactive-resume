@@ -1,0 +1,539 @@
+/* Global styles */
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Noto";
+  src: url("../fonts/NotoSansJP-Regular.otf");
+}
+
+@font-face {
+  font-family: "Noto";
+  src: url("../fonts/NotoSansJP-Regular.otf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Noto Bold";
+  src: url("../fonts/NotoSansJP-Bold.otf");
+  font-weight: 800;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Noto", Arial;
+}
+
+body {
+  background: -webkit-gradient(linear, left top, left bottom, from(black), to(transparent)), url("../img/laptop.jpg");
+  background: linear-gradient(black, transparent), url("../img/laptop.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 97.5rem;
+  color: #eee6e6;
+}
+
+main {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+a {
+  text-decoration: none;
+  color: #eee6e6;
+}
+
+ul {
+  list-style: none;
+  font-size: 1.8rem;
+}
+
+h1 {
+  font-family: "Noto Bold";
+  font-size: calc(2.5rem + 1vw);
+}
+
+h2 {
+  font-size: calc(1.7rem + 1vw);
+  margin-bottom: 3rem;
+}
+
+p,
+h3,
+h4,
+h5,
+h6,
+ul {
+  font-weight: normal;
+  font-size: calc(0.9rem + 1vw);
+}
+
+h3 {
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+p {
+  width: 90%;
+  margin: auto;
+  text-align: center;
+}
+
+label {
+  display: block;
+  width: 55vw;
+  padding-top: 0.2rem;
+  text-align: center;
+}
+
+label:hover {
+  cursor: pointer;
+}
+
+input {
+  display: none;
+}
+
+section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 50vw;
+  height: 4.8rem;
+  -webkit-box-shadow: 0px 1rem 5rem black;
+          box-shadow: 0px 1rem 5rem black;
+  z-index: 1;
+}
+
+section div {
+  opacity: 0;
+  pointer-events: none;
+}
+
+section h1,
+section h2 {
+  -webkit-animation: header-fade-out 0.9s ease;
+          animation: header-fade-out 0.9s ease;
+}
+
+/* Selection Animations */
+#radio-about:checked ~ #about-section {
+  -webkit-animation: fade-in 1s ease forwards;
+          animation: fade-in 1s ease forwards;
+}
+
+#radio-about:checked ~ #about-section h1 {
+  -webkit-animation: header-fade-in 1s ease forwards;
+          animation: header-fade-in 1s ease forwards;
+}
+
+#radio-about:checked ~ #about-section div {
+  -webkit-animation: content-fade-in 1s ease forwards;
+          animation: content-fade-in 1s ease forwards;
+  pointer-events: all;
+}
+
+#radio-education:checked ~ #education-section {
+  -webkit-animation: fade-in 1s ease forwards;
+          animation: fade-in 1s ease forwards;
+}
+
+#radio-education:checked ~ #education-section h2 {
+  -webkit-animation: header-fade-in 1s ease forwards;
+          animation: header-fade-in 1s ease forwards;
+}
+
+#radio-education:checked ~ #education-section div {
+  -webkit-animation: content-fade-in 1s ease forwards;
+          animation: content-fade-in 1s ease forwards;
+}
+
+#radio-experience:checked ~ #experience-section {
+  -webkit-animation: fade-in 1s ease forwards;
+          animation: fade-in 1s ease forwards;
+}
+
+#radio-experience:checked ~ #experience-section h2 {
+  -webkit-animation: header-fade-in 1s ease forwards;
+          animation: header-fade-in 1s ease forwards;
+}
+
+#radio-experience:checked ~ #experience-section div {
+  -webkit-animation: content-fade-in 1s ease forwards;
+          animation: content-fade-in 1s ease forwards;
+}
+
+#radio-projects:checked ~ #projects-section {
+  -webkit-animation: fade-in 1s ease forwards;
+          animation: fade-in 1s ease forwards;
+}
+
+#radio-projects:checked ~ #projects-section h2 {
+  -webkit-animation: header-fade-in 1s ease forwards;
+          animation: header-fade-in 1s ease forwards;
+}
+
+#radio-projects:checked ~ #projects-section div {
+  -webkit-animation: content-fade-in 1s ease forwards;
+          animation: content-fade-in 1s ease forwards;
+}
+
+#radio-skills:checked ~ #skills-section {
+  -webkit-animation: fade-in 1s ease forwards;
+          animation: fade-in 1s ease forwards;
+}
+
+#radio-skills:checked ~ #skills-section h2 {
+  -webkit-animation: header-fade-in 1s ease forwards;
+          animation: header-fade-in 1s ease forwards;
+}
+
+#radio-skills:checked ~ #skills-section div {
+  -webkit-animation: content-fade-in 1s ease forwards;
+          animation: content-fade-in 1s ease forwards;
+}
+
+#radio-involvement:checked ~ #involvement-section {
+  -webkit-animation: fade-in 1s ease forwards;
+          animation: fade-in 1s ease forwards;
+}
+
+#radio-involvement:checked ~ #involvement-section h2 {
+  -webkit-animation: header-fade-in 1s ease forwards;
+          animation: header-fade-in 1s ease forwards;
+}
+
+#radio-involvement:checked ~ #involvement-section div {
+  -webkit-animation: content-fade-in 1s ease forwards;
+          animation: content-fade-in 1s ease forwards;
+}
+
+/* Styling */
+#about-section {
+  background: #404040;
+  -webkit-animation: fade-out 0.9s ease;
+          animation: fade-out 0.9s ease;
+}
+
+#education-section {
+  background: #383838;
+  -webkit-animation: fade-out 0.9s ease;
+          animation: fade-out 0.9s ease;
+}
+
+#experience-section {
+  background: #181818;
+  -webkit-animation: fade-out 0.9s ease;
+          animation: fade-out 0.9s ease;
+}
+
+#projects-section {
+  background: #181818;
+  -webkit-animation: fade-out 0.9s ease;
+          animation: fade-out 0.9s ease;
+}
+
+#skills-section {
+  background: #383838;
+  -webkit-animation: fade-out 0.9s ease;
+          animation: fade-out 0.9s ease;
+}
+
+#involvement-section {
+  background: #404040;
+  -webkit-animation: fade-out 0.9s ease;
+          animation: fade-out 0.9s ease;
+}
+
+/* Animations */
+@-webkit-keyframes fade-in {
+  from {
+  }
+  to {
+    height: 55rem;
+    width: 55vw;
+    z-index: 2;
+  }
+}
+@keyframes fade-in {
+  from {
+  }
+  to {
+    height: 55rem;
+    width: 55vw;
+    z-index: 2;
+  }
+}
+
+@-webkit-keyframes fade-out {
+  from {
+    height: 55rem;
+    width: 55vw;
+    z-index: 2;
+  }
+  to {
+    height: 4.8rem;
+    width: 50vw;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    height: 55rem;
+    width: 55vw;
+    z-index: 2;
+  }
+  to {
+    height: 4.8rem;
+    width: 50vw;
+  }
+}
+
+@-webkit-keyframes content-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes content-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes content-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes content-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes header-fade-in {
+  from {
+    margin-top: 0;
+  }
+  to {
+    margin-top: 10%;
+  }
+}
+
+@keyframes header-fade-in {
+  from {
+    margin-top: 0;
+  }
+  to {
+    margin-top: 10%;
+  }
+}
+
+@-webkit-keyframes header-fade-out {
+  from {
+    margin-top: 10%;
+  }
+  to {
+    margin-top: 0;
+  }
+}
+
+@keyframes header-fade-out {
+  from {
+    margin-top: 10%;
+  }
+  to {
+    margin-top: 0;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  h1 {
+    font-size: 3.5rem;
+  }
+  h2 {
+    font-size: 2.7rem;
+  }
+  p,
+  h3,
+  h4,
+  h5,
+  h6,
+  ul {
+    font-size: 1.9rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  section {
+    width: 90vw;
+  }
+  @-webkit-keyframes fade-in {
+    from {
+    }
+    to {
+      height: 55rem;
+      width: 95vw;
+      z-index: 2;
+    }
+  }
+  @keyframes fade-in {
+    from {
+    }
+    to {
+      height: 55rem;
+      width: 95vw;
+      z-index: 2;
+    }
+  }
+  @-webkit-keyframes fade-out {
+    from {
+      height: 55rem;
+      width: 95vw;
+      z-index: 2;
+    }
+    to {
+      height: 4.8rem;
+      width: 90vw;
+    }
+  }
+  @keyframes fade-out {
+    from {
+      height: 55rem;
+      width: 95vw;
+      z-index: 2;
+    }
+    to {
+      height: 4.8rem;
+      width: 90vw;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) and (max-height: 1366px) {
+  body {
+    background: -webkit-gradient(linear, left top, left bottom, from(black), to(transparent)), url("../img/laptop-ipad-pro.jpg");
+    background: linear-gradient(black, transparent), url("../img/laptop-ipad-pro.jpg");
+    background-repeat: no-repeat;
+  }
+}
+
+/* About Section */
+.contact-info {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.contact-info li {
+  margin: 1rem 0rem;
+}
+
+/* Education Section */
+.education-info {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.education-info li {
+  list-style: square;
+  margin: 1rem 0rem;
+}
+
+.education-info h4 {
+  margin: 1rem auto;
+}
+
+.education-info span {
+  font-weight: normal;
+}
+
+.skills-info {
+  min-height: 50%;
+  min-width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.skills-info ul {
+  min-height: 40%;
+}
+
+.skills-info li {
+  margin: 1rem;
+}
+/*# sourceMappingURL=style.css.map */
