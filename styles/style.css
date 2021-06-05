@@ -133,6 +133,8 @@ section {
 
 section div {
   opacity: 0;
+  -webkit-animation: content-fade-out 0.9s ease;
+          animation: content-fade-out 0.9s ease;
   pointer-events: none;
 }
 

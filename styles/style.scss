@@ -100,7 +100,7 @@ section {
   z-index: 1;
   div {
     opacity: 0;
-    // animation: content-fade-out 0.9s ease;
+    animation: content-fade-out 0.9s ease;
     pointer-events: none;
   }
   h1,
