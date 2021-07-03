@@ -34,7 +34,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   height: 97.5rem;
-  color: #eee6e6;
+  color: #eee7e7;
 }
 
 main {
@@ -56,7 +56,7 @@ main {
 
 a {
   text-decoration: none;
-  color: #eee6e6;
+  color: #f7f0f0;
 }
 
 ul {
@@ -161,6 +161,10 @@ section h2 {
   pointer-events: all;
 }
 
+#radio-about:checked ~ #about-section div a {
+  text-decoration: underline;
+}
+
 #radio-education:checked ~ #education-section {
   -webkit-animation: fade-in 1s ease forwards;
           animation: fade-in 1s ease forwards;
@@ -192,6 +196,8 @@ section h2 {
 }
 
 #radio-projects:checked ~ #projects-section {
+  overflow-y: auto;
+  overflow-x: hidden;
   -webkit-animation: fade-in 1s ease forwards;
           animation: fade-in 1s ease forwards;
 }
@@ -201,9 +207,30 @@ section h2 {
           animation: header-fade-in 1s ease forwards;
 }
 
+#projects-section::-webkit-scrollbar {
+  width: 8px;
+}
+
+#projects-section::-webkit-scrollbar-track {
+  background: #7c7c7c;
+}
+
+#projects-section::-webkit-scrollbar-thumb {
+  background: #383838;
+}
+
+#projects-section::-webkit-scrollbar-thumb:hover {
+  background: #474747;
+}
+
 #radio-projects:checked ~ #projects-section div {
   -webkit-animation: content-fade-in 1s ease forwards;
           animation: content-fade-in 1s ease forwards;
+  pointer-events: all;
+}
+
+#radio-projects:checked ~ #projects-section div a {
+  text-decoration: underline;
 }
 
 #radio-skills:checked ~ #skills-section {
@@ -482,35 +509,52 @@ section h2 {
   margin: 1rem 0rem;
 }
 
-/* Education Section */
+.experience-info,
 .education-info {
-  height: 100%;
+  width: 70%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
+.experience-info li,
 .education-info li {
   list-style: square;
   margin: 1rem 0rem;
 }
 
-.education-info h4 {
-  margin: 1rem auto;
+.experience-info ul,
+.education-info ul {
+  padding-left: 2rem;
 }
 
-.education-info span {
-  font-weight: normal;
+.experience-info .work-position,
+.experience-info .major-duration,
+.education-info .work-position,
+.education-info .major-duration {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .skills-info {
@@ -536,6 +580,65 @@ section h2 {
 }
 
 .skills-info li {
+  list-style: square;
   margin: 1rem;
+}
+
+.involvement-info {
+  width: 70%;
+}
+
+.involvement-info li {
+  font-size: 1.7rem;
+  list-style: square;
+  margin: 1rem 0rem;
+}
+
+.involvement-info div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.projects-info {
+  width: 70%;
+}
+
+.projects-info article {
+  margin-bottom: 1rem;
+}
+
+.projects-info ul {
+  padding-left: 2rem;
+}
+
+.projects-info li {
+  list-style: square;
+}
+
+.projects-info .project-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 /*# sourceMappingURL=style.css.map */

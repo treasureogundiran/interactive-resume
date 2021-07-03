@@ -36,7 +36,7 @@ body {
   //   background-size: cover;
   //   position: relative;
   height: 97.5rem;
-  color: rgb(238, 230, 230);
+  color: rgb(238, 231, 231);
 }
 main {
   height: 100%;
@@ -48,7 +48,7 @@ main {
 }
 a {
   text-decoration: none;
-  color: rgb(238, 230, 230);
+  color: rgb(247, 240, 240);
 }
 ul {
   list-style: none;
@@ -118,6 +118,9 @@ section {
 #radio-about:checked ~ #about-section div {
   animation: content-fade-in 1s ease forwards;
   pointer-events: all;
+  a {
+    text-decoration: underline;
+  }
 }
 #radio-education:checked ~ #education-section {
   animation: fade-in 1s ease forwards;
@@ -138,13 +141,31 @@ section {
   animation: content-fade-in 1s ease forwards;
 }
 #radio-projects:checked ~ #projects-section {
+  overflow-y: auto;
+  overflow-x: hidden;
   animation: fade-in 1s ease forwards;
   h2 {
     animation: header-fade-in 1s ease forwards;
   }
 }
+#projects-section::-webkit-scrollbar {
+  width: 8px;
+}
+#projects-section::-webkit-scrollbar-track {
+  background: #7c7c7c;
+}
+#projects-section::-webkit-scrollbar-thumb {
+  background: #383838;
+}
+#projects-section::-webkit-scrollbar-thumb:hover {
+  background: #474747;
+}
 #radio-projects:checked ~ #projects-section div {
   animation: content-fade-in 1s ease forwards;
+  pointer-events: all;
+  a {
+    text-decoration: underline;
+  }
 }
 #radio-skills:checked ~ #skills-section {
   animation: fade-in 1s ease forwards;
@@ -301,20 +322,23 @@ section {
     margin: 1rem 0rem;
   }
 }
-/* Education Section */
+
+// Education and Experience
+.experience-info,
 .education-info {
-  height: 100%;
-  @include flex(column, center);
+  width: 70%;
   li {
     list-style: square;
     margin: 1rem 0rem;
   }
-  h4 {
-    margin: 1rem auto;
+  ul {
+    padding-left: 2rem;
   }
-  span {
-    font-weight: normal;
+  .work-position,
+  .major-duration {
+    @include flex(row, $justify: space-between);
   }
+  @include flex(row, $justify: space-between);
 }
 .skills-info {
   min-height: 50%;
@@ -324,6 +348,33 @@ section {
     min-height: 40%;
   }
   li {
+    list-style: square;
     margin: 1rem;
+  }
+}
+.involvement-info {
+  width: 70%;
+  li {
+    font-size: 1.7rem;
+    list-style: square;
+    margin: 1rem 0rem;
+  }
+  div {
+    @include flex(row, $justify: space-between);
+  }
+}
+.projects-info {
+  width: 70%;
+  article {
+    margin-bottom: 1rem;
+  }
+  ul {
+    padding-left: 2rem;
+  }
+  li {
+    list-style: square;
+  }
+  .project-title {
+    @include flex(row, $justify: space-between);
   }
 }
