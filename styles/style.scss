@@ -98,6 +98,7 @@ section {
   height: 4.8rem;
   box-shadow: 0px 1rem 5rem black;
   z-index: 1;
+  overflow: hidden;
   div {
     opacity: 0;
     animation: content-fade-out 0.9s ease;
